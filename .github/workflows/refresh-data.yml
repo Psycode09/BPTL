@@ -1,11 +1,11 @@
 name: Refresh Finsight data
 
-  on:
+on:
     schedule:
       - cron: "0 3 * * *"
     workflow_dispatch:
 
-  jobs:
+jobs:
     refresh:
       runs-on: ubuntu-latest
       steps:
