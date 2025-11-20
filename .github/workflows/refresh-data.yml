@@ -1,11 +1,11 @@
-name: Refresh Finsight data
-
-on:
+@"
+  name: Refresh Finsight data
+  on:
     schedule:
       - cron: "0 3 * * *"
     workflow_dispatch:
 
-jobs:
+  jobs:
     refresh:
       runs-on: ubuntu-latest
       steps:
@@ -13,3 +13,4 @@ jobs:
           run: curl -X GET https://mbrvhaftlidajvuxhjtb.functions.supabase.co/cron-refresh-critical-transactions
         - name: Refresh insights
           run: curl -X GET https://mbrvhaftlidajvuxhjtb.functions.supabase.co/make-server-d84f5a52/insights/generate
+  "@ | Set-Content -NoNewline -Encoding Ascii .github/workflows/refresh-data.yml
